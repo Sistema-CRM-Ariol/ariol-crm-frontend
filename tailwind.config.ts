@@ -21,8 +21,8 @@ export default {
         },
         radius: {
           small: '3px',
+          medium: '12px',
           large: '9px',
-          medium: '6px',
         },
       },
 
