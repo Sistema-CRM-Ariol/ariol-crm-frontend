@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Gilroy } from "@/config";
+import Providers from "@/components/Providers";
 
 
 export default function RootLayout({
@@ -12,7 +13,9 @@ export default function RootLayout({
       <body
         className={`${Gilroy.className} antialiased relative`}
       >
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

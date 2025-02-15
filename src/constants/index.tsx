@@ -1,4 +1,4 @@
-import { Configuration01Icon, Configuration02Icon, CustomerService01Icon, DashboardBrowsingIcon, GroupItemsIcon, Home01Icon, WarehouseIcon } from "hugeicons-react";
+import { Configuration02Icon, CustomerService01Icon, GroupItemsIcon, Home01Icon } from "hugeicons-react";
 
 // SIDE MENU OPTIONS
 export const sideMenuAplications = [

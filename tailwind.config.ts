@@ -7,13 +7,19 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/modules/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@heroui/theme/dist/components/(button|ripple|spinner).js"
+    "./src/lib/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@heroui/theme/dist/components/(button|input|pagination|table|ripple|spinner|form|checkbox|spacer).js"
   ],
-  theme: {},
+  theme: {
+    extend: {
+      colors: {
+        body: "#f5f7fa"
+      }
+    }
+  },
   plugins: [
     heroui({
       defaultTheme: 'light',
-
       layout: {
         boxShadow: {
           small: 'rgba(58,101,247,0.1) 0px 0px 16px;',

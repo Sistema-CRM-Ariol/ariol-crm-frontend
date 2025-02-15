@@ -6,11 +6,11 @@ export default function DashboardLayout({
     children: React.ReactNode;
 }) {
     return (
-        <>
+        <div className="admin-layout">
             <Sidemenu/>
-            <main>
+            <main className="w-full">
                 { children }
             </main>
-        </>
+        </div>
     );
 }

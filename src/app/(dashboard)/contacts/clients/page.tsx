@@ -1,8 +1,11 @@
+import { ClientsHeader } from "@/modules/clients/components/ClientsHeader";
+import { ClientTable } from "@/modules/clients/components/ClientTable";
 
 export default function ClientsPage() {
     return (
-        <div>
-            <h1>Hello Page</h1>
-        </div>
+        <>
+            <ClientsHeader/>
+            <ClientTable/>
+        </>
     );
 }
