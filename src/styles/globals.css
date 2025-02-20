@@ -19,7 +19,7 @@
 
 @layer components {
   .container {
-    @apply max-w-[95%] 2xl:max-w-[90%] mx-auto
+    @apply max-w-[95%] mx-auto
   }
 
   .btn-gradient {
@@ -139,12 +139,12 @@
   }
 
   /* CLIENTS */
-  .clients__header {
-    @apply pt-8
+  .contacts__header {
+    @apply pt-6
   }
 
-  .clients__header--container {
-    @apply container flex flex-col justify-start lg:flex-row lg:justify-between lg:items-center
+  .contacts__header--container {
+    @apply container flex flex-col justify-start gap-4
   }
 
   .clients-table__header {
@@ -161,6 +161,10 @@
 
   .customer__task--table {
     @apply bg-white p-4 col-span-8
+  }
+
+  .client-overview__card {
+    @apply bg-white border rounded-lg p-6 py-4 text-wrap space-y-4 max-w-xs w-full
   }
 
   /* PRODUCTS */

@@ -4,6 +4,7 @@ import { useClients } from '../hooks/useClients'
 import { heroUiClassNames } from '@/lib/heroui-classnames';
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/table"
 import { ClientTableHeader } from './ClientTableHeader';
+import { DeleteClientButton } from './DeleteClientButton';
 
 export const ClientTable = () => {
 
@@ -53,10 +54,7 @@ export const ClientTable = () => {
                                     <TableCell>{client.emails[0] ? client.emails[0] : 'No agregados'}</TableCell>
                                     <TableCell>{client.phones[0] ? client.phones[0] : 'No agregados'}</TableCell>
                                     <TableCell className='flex'>
-                                        acciones
-                                        {/* <ButtonScheduleAppointment client={client} />
-                                    <Button isIconOnly size='sm' color='primary' variant='light' startContent={<EyeIcon size={18} />} onPress={() => router.push(`/admin/contacts/clients/${client.id}`)} />
-                                    <ClientTableDeleteAction client={client} /> */}
+                                        <DeleteClientButton client={client}/>
                                     </TableCell>
                                 </TableRow>
                             ))

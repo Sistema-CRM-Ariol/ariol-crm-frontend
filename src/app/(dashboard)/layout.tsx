@@ -8,7 +8,7 @@ export default function DashboardLayout({
     return (
         <div className="admin-layout">
             <Sidemenu/>
-            <main className="w-full">
+            <main className="w-full h-screen overflow-y-auto pb-10">
                 { children }
             </main>
         </div>
