@@ -1,4 +1,4 @@
-import { Configuration02Icon, CustomerService01Icon, GroupItemsIcon, Home01Icon } from "hugeicons-react";
+import { CheckListIcon, Home01Icon, PackageIcon, SaleTag01Icon, Settings01Icon, UserGroupIcon, UserIcon, UserListIcon } from "hugeicons-react";
 
 // SIDE MENU OPTIONS
 export const sideMenuAplications = [
@@ -9,20 +9,40 @@ export const sideMenuAplications = [
     },
     {
         name: 'Clientes',
-        icon: <CustomerService01Icon size={22}/>,
+        icon: <UserListIcon size={22}/>,
         href: '/contacts/clients'
     },
     {
         name: 'Inventarios',
-        icon: <GroupItemsIcon size={22}/>,
+        icon: <CheckListIcon size={22}/>,
         href: '/inventory'
+    },
+    {
+        name: 'Productos',
+        icon: <PackageIcon size={22}/>,
+        href: '/products'
+    },
+    {
+        name: 'Ventas',
+        icon: <SaleTag01Icon size={22}/>,
+        href: '/sales'
     },
 ]
 
 export const sideMenuOthers = [
     {
+        name: 'Usuarios',
+        icon: <UserGroupIcon size={22}/>,
+        href: '/users'
+    },
+    {
+        name: 'Perfil',
+        icon: <UserIcon size={22}/>,
+        href: '/profile'
+    },
+    {
         name: 'Configuración',
-        icon: <Configuration02Icon size={22}/>,
+        icon: <Settings01Icon size={22}/>,
         href: '/settings'
     },
 
