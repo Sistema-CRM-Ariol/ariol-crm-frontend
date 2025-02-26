@@ -17,6 +17,7 @@
     "@heroui/table": "^2.2.9",
     "@heroui/tabs": "^2.2.8",
     "@heroui/theme": "^2.4.6",
+    "@react-pdf/renderer": "^4.2.2",
     "@tanstack/react-query": "^5.66.0",
     "axios": "^1.7.9",
     "framer-motion": "^12.4.3",

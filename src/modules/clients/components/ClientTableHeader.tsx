@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import { Download01Icon, PlusSignIcon } from 'hugeicons-react'
 import { Button } from '@heroui/button';
 import { SearchClientInput } from './SearchClientInput';
+import Link from 'next/link';
 
 export const ClientTableHeader = () => {
 
@@ -25,14 +26,15 @@ export const ClientTableHeader = () => {
                     >
                         Agregar Cliente
                     </Button>
-                    <Button
-                        onPress={() => router.push('/admin/contacts/clients/new')}
-                        endContent={<Download01Icon size={18} />}
-                        size="md"
-                        className='bg-indigo-500 text-white'
-                    >
-                        Descargar reporte
-                    </Button>
+                    <Link href='/contacts/clients/general-report' target='_blank'>
+                        <Button
+                            endContent={<Download01Icon size={18} />}
+                            size="md"
+                            className='bg-indigo-500 text-white'
+                        >
+                            Descargar reporte
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </div>
