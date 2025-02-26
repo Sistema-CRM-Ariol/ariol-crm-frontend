@@ -3,6 +3,7 @@
 import { PaginatedResponse } from "@/interfaces/pagination"
 import { ClientSummary } from "../interfaces/client-summary.interface"
 import apiClient from "@/lib/apiClient"
+import { handleServerActionError } from "@/lib/helpers"
 
 export const getAllClients = async (options: {
     page: number;
@@ -21,6 +22,6 @@ export const getAllClients = async (options: {
         return data;
 
     } catch (error) {
-        throw error;
+        return handleServerActionError(error);
     }
 }
