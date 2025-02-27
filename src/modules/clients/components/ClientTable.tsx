@@ -43,18 +43,14 @@ export const ClientTable = () => {
                             clients.map(client => (
 
                                 <TableRow key={client.id} className='text-gray-600 font-medium'>
-                                    <TableCell>
-                                        <p className='text-sm'>
-                                            {client.nit}
-                                        </p>
-                                    </TableCell>
+                                    <TableCell>{client.nit}</TableCell>
                                     <TableCell>{client.name}</TableCell>
                                     <TableCell>{client.position}</TableCell>
                                     <TableCell>{client.address}</TableCell>
                                     <TableCell>{client.emails[0] ? client.emails[0] : 'No agregados'}</TableCell>
                                     <TableCell>{client.phones[0] ? client.phones[0] : 'No agregados'}</TableCell>
                                     <TableCell className='flex'>
-                                        <DeleteClientButton client={client}/>
+                                        <DeleteClientButton client={client} />
                                     </TableCell>
                                 </TableRow>
                             ))

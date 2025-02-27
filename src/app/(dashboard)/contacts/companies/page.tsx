@@ -1,8 +1,9 @@
+import { CompanyTable } from '@/modules/companies/components/CompanyTable';
 
 export default function CompaniesPage() {
     return (
-        <div>
-            <h1>Hello Page</h1>
-        </div>
+        <>
+            <CompanyTable/>
+        </>
     );
 }

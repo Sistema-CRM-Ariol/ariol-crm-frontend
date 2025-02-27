@@ -1,4 +1,5 @@
 "use client"
+import { heroUiClassNames } from '@/lib/heroui-classnames'
 import { useDeleteClient } from '../hooks/useDeleteClient'
 import { ClientSummary } from '../interfaces/client-summary.interface'
 
@@ -16,20 +17,23 @@ export const DeleteClientButton = ({ client }: Props) => {
 
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-
     return (
         <>
             <Button
                 size='sm'
                 isIconOnly
+                radius='lg'
+                color='danger'
+                variant='light'
                 onPress={onOpen}
                 startContent={<Delete02Icon size={18} />}
-                color='danger'
-                radius='lg'
-                variant='light'
             />
 
-            <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+            <Modal
+                isOpen={isOpen}
+                onOpenChange={onOpenChange}
+                classNames={heroUiClassNames.modal}
+            >
                 <ModalContent>
                     {(onClose) => (
                         <>

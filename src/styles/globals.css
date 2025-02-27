@@ -17,7 +17,7 @@
   }
 }
 
-@layer components {
+@layer utilities {
   .container {
     @apply max-w-[95%] mx-auto
   }
@@ -29,9 +29,26 @@
   .modal__header {
     @apply flex-col gap-2 items-center uppercase
   }
+
+  /* SIDE MENU */
+  .sidemenu {
+    @apply max-w-72 2xl:max-w-[320px] w-full bg-white h-screen px-8 pt-6 pb-8 border-r border-gray-200
+  }
+
+  .sidemenu__logo {
+    @apply text-3xl font-bold mb-6
+  }
+
+  .sidemenu__item {
+    @apply text-gray-500 justify-start font-semibold px-4 !py-[22px] text-base gap-4 hover:text-primary-500
+  }
+
+  .sidemenu__item--active {
+    @apply !text-primary-500 sidemenu__item
+  }
 }
 
-@layer utilities {
+@layer components {
   /* AUTH */
 
   .login__page {
@@ -80,24 +97,6 @@
     @apply flex h-screen w-full
   }
 
-  /* SIDE MENU */
-  .sidemenu {
-    @apply max-w-72 2xl:max-w-[320px] w-full bg-white h-screen px-8 pt-6 pb-8 border-r border-gray-200
-  }
-
-  .sidemenu__logo {
-    @apply text-3xl font-bold mb-6
-  }
-
-  .sidemenu__item {
-    @apply text-gray-500 justify-start font-semibold px-4 !py-[22px] text-base gap-4
-    hover:text-primary-500
-  }
-
-  .sidemenu__item--active {
-    @apply !text-primary-500 sidemenu__item
-  }
-
 
   /* NAVMENU */
   .navbar {
@@ -121,6 +120,10 @@
   /* COMPANIES */
   .company__form {
     @apply bg-white p-6 space-y-6 rounded-lg
+  }
+
+  .companies-table__header {
+    @apply flex flex-col gap-4
   }
 
   /* PROVIDER */
