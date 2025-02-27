@@ -32,7 +32,7 @@
 
   /* SIDE MENU */
   .sidemenu {
-    @apply max-w-72 2xl:max-w-[320px] w-full bg-white h-screen px-8 pt-6 pb-8 border-r border-gray-200
+    @apply max-w-72 2xl:max-w-[320px] w-full bg-white h-screen px-8 pt-6 pb-8 border-r border-gray-300
   }
 
   .sidemenu__logo {
@@ -40,11 +40,11 @@
   }
 
   .sidemenu__item {
-    @apply text-gray-500 justify-start font-semibold px-4 !py-[22px] text-base gap-4 hover:text-primary-500
+    @apply text-gray-500 justify-start font-semibold px-4 !py-[22px] text-base gap-4 hover:!bg-primary-100/70 hover:text-primary-700
   }
 
   .sidemenu__item--active {
-    @apply !text-primary-500 sidemenu__item
+    @apply !text-primary-700 bg-primary-100/70 sidemenu__item
   }
 }
 

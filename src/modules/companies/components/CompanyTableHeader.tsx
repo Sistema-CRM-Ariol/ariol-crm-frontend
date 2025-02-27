@@ -6,6 +6,7 @@ import { Button } from '@heroui/button';
 import { Download01Icon, PlusSignIcon } from 'hugeicons-react';
 
 import { SearchClientInput } from '@/modules/clients/components/SearchClientInput';
+import { InputSearchTable } from '@/components/InputSearchTable';
 
 
 export const CompanyTableHeader = () => {
@@ -17,7 +18,7 @@ export const CompanyTableHeader = () => {
             <h2 className='text-xl'>Listado de empresas</h2>
 
             <div className='flex flex-col lg:flex-row justify-between items-center'>
-                <SearchClientInput />
+                <InputSearchTable placeholder="Buscar empresa" />
                 <div className="flex gap-3">
                     <Link href='/contacts/companies/general-report' target='_blank'>
                         <Button
@@ -30,6 +31,7 @@ export const CompanyTableHeader = () => {
                     </Link>
                     <Button
                         color='primary'
+                        className='bg-primary-700'
                         startContent={<PlusSignIcon size={16} />}
                         onPress={() => router.push('/admin/contacts/companies/new')}
                     >

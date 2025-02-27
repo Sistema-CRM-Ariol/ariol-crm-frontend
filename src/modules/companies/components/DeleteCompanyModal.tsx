@@ -1,6 +1,6 @@
 
 import { Button } from '@heroui/button';
-import { Delete02Icon } from 'hugeicons-react';
+import { Alert02Icon, Delete02Icon } from 'hugeicons-react';
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@heroui/modal'
 
 import { useDeleteCompany } from '../hooks/useDeleteCompany';
@@ -32,6 +32,7 @@ export const DeleteCompanyModal = ({ company }: Props) => {
 
             <Modal
                 shadow='none'
+                size='lg'
                 isOpen={isOpen} 
                 onOpenChange={onOpenChange}
                 classNames={heroUiClassNames.modal}
@@ -39,14 +40,14 @@ export const DeleteCompanyModal = ({ company }: Props) => {
                 <ModalContent>
                     {(onClose) => (
                         <>
-                            <ModalHeader>
-                                <h2>Esta acción eliminara al cliente</h2>
-                            </ModalHeader>
-                            <ModalBody>
-                                <p>
-                                    ¿Esta seguro de eliminar la empresa <span className='font-semibold'>{company.name}</span>?<br />
-                                    <span className='text-red-400 font-medium'>Todos sus datos se perderan definitivamente</span>
-                                </p>
+                            <ModalBody className='flex-row items-center'>
+                                <div className='bg-body text-red-700 p-4 rounded-full'>
+                                    <Alert02Icon/>
+                                </div>
+                                <div>
+                                    <h3 className='font-semibold text-lg'>Advertencia!</h3>
+                                    <p>Esta accion eliminara todos los datos de la empresa <span className='font-semibold'>{company.name}</span></p>
+                                </div>
                             </ModalBody>
                             <ModalFooter>
                                 <Button color="danger" variant="light" onPress={onClose}>

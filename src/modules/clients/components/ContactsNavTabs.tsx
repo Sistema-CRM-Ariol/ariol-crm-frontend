@@ -11,7 +11,7 @@ export const ContactsNavTabs = () => {
         <Tabs
             color="primary"
             classNames={{ 
-                base: "border-b",
+                base: "border-b border-gray-300",
                 cursor: "h-[3.5px] w-[100%] bottom-[-5px] rounded-full",
                 tab: "px-10 font-semibold"
             }}
