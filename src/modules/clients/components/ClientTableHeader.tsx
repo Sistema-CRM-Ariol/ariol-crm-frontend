@@ -19,7 +19,7 @@ export const ClientTableHeader = () => {
                 <SearchClientInput />
                 <div className="flex gap-3">
                     <Button
-                        onPress={() => router.push('/admin/contacts/clients/new')}
+                        onPress={() => router.push('/contacts/clients/new')}
                         endContent={<PlusSignIcon size={18} />}
                         size="md"
                         color='primary'

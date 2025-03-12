@@ -21,10 +21,9 @@ export const formatDate = (isoDate: Date): string => {
 
 
 export const handleServerActionError = (error: unknown) => {
-
     if( isAxiosError(error) ){
         const { response } = error;
-        
+
         if( response?.data?.message ){
             return response.data.message;
         }

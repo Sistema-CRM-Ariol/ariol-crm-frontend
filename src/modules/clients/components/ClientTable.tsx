@@ -1,7 +1,7 @@
 "use client"
 import { PaginationButtons } from '@/components/PaginationButtons';
 import { useClients } from '../hooks/useClients'
-import { heroUiClassNames } from '@/lib/heroui-classnames';
+import { heroUIStyles } from '@/lib/heroui-styles';
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/table"
 import { ClientTableHeader } from './ClientTableHeader';
 import { DeleteClientButton } from './DeleteClientButton';
@@ -16,7 +16,7 @@ export const ClientTable = () => {
 
                 <Table
                     isStriped
-                    classNames={heroUiClassNames.table}
+                    classNames={heroUIStyles.table}
                     aria-label="Tabla para la gestion de clientes"
                     topContent={
                         <ClientTableHeader />

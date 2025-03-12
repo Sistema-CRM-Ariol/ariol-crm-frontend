@@ -5,7 +5,7 @@ export const sideMenuAplications = [
     {
         name: 'Dashboard',
         icon: <Home01Icon size={22}/>,
-        href: '/'
+        href: '/home'
     },
     {
         name: 'Clientes',

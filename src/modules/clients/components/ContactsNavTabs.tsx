@@ -1,42 +1,43 @@
 "use client"
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { Tab, Tabs } from '@heroui/tabs'
 import { Building03Icon, UserGroupIcon } from 'hugeicons-react'
+import { heroUIStyles } from '@/lib/heroui-styles'
 
 export const ContactsNavTabs = () => {
 
-    const router = useRouter()
 
     return (
         <Tabs
             color="primary"
-            classNames={{ 
-                base: "border-b border-gray-300",
-                cursor: "h-[3.5px] w-[100%] bottom-[-5px] rounded-full",
-                tab: "px-10 font-semibold"
-            }}
-            aria-label="Options"
+            classNames={heroUIStyles.tabs}
+            aria-label="Contacts options"
             variant="underlined"
-            onSelectionChange={e => router.push(`/contacts/${ e }`)}
         >
+
             <Tab
                 key="clients"
                 title={
-                    <div className="flex items-center space-x-2">
-                        <UserGroupIcon size={20}/>
-                        <span>Clientes</span>
-                    </div>
+                    <Link href="/contacts/clients">
+                        <div className="flex items-center space-x-2">
+                            <UserGroupIcon size={20} />
+                            <span>Clientes</span>
+                        </div>
+                    </Link>
                 }
             />
             <Tab
                 key="companies"
                 title={
-                    <div className="flex items-center space-x-2">
-                        <Building03Icon size={20}/>
-                        <span>Empresas</span>
-                    </div>
+                    <Link as='' href="/contacts/companies">
+                        <div className="flex items-center space-x-2">
+                            <Building03Icon size={20} />
+                            <span>Empresas</span>
+                        </div>
+                    </Link>
                 }
             />
+
         </Tabs>
     )
 }

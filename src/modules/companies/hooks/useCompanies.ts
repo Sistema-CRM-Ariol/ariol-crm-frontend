@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation"
 import { getAllCompanies } from "../actions/get-all-companies"
 import { CompanySummary } from "../interfaces/company-summary.interface"
 
-export const useCompanies = () => {
+export const useCompanies = ( defaultPage: number = 1, defaultLimit: number = 10 ) => {
 
     const queryParams = useSearchParams()
 
@@ -18,8 +18,8 @@ export const useCompanies = () => {
     const [meta, setMeta] = useState<PaginationMeta>()
     const [companies, setCompanies] = useState<CompanySummary[]>([])
 
-    const [page, setPage] = useState(1)
-    const [limit, setLimit] = useState(10)
+    const [page, setPage] = useState(defaultPage)
+    const [limit, setLimit] = useState(defaultLimit)
     const [search, setSearch] = useState('')
 
 

@@ -22,11 +22,11 @@ export const SidemenuItem = ({ item }: Props) => {
     return (
         <Link href={item.href} className='block'>
             <Button
-                className={ pathname == item.href && pathname.includes(item.href) ? 'sidemenu__item--active' : 'sidemenu__item'}
+                className={ pathname.includes(item.href) ? 'sidemenu__item--active' : 'sidemenu__item'}
                 fullWidth
                 radius='md'
                 color='primary'
-                variant={ pathname == item.href && pathname.includes(item.href) ? 'flat' : 'light' }
+                variant={ pathname.includes(item.href) ? 'flat' : 'light' }
                 as='li'
             >
                 <span>{item.icon}</span>

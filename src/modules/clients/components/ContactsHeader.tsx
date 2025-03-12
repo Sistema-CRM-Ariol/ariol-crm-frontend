@@ -12,15 +12,6 @@ export const ContactsHeader = () => {
                         title="Contactos"
                         subtitle="Gestiona tus contactos y toda su información"
                     />
-                    <div className='flex gap-4'>
-                        <Link href='/contacts/clients/new'>
-                            <Button color='primary'>+ Agregar cliente</Button>
-                        </Link>
-
-                        <Link href='/contacts/clients/new'>
-                            <Button color='primary'>+ Agregar empresa</Button>
-                        </Link>
-                    </div>
                 </div>
 
                 <ContactsNavTabs />

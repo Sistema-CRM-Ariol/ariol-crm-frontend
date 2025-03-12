@@ -5,7 +5,7 @@ import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure
 
 import { useDeleteCompany } from '../hooks/useDeleteCompany';
 import { CompanySummary } from '../interfaces/company-summary.interface';
-import { heroUiClassNames } from '@/lib/heroui-classnames';
+import { heroUIStyles } from '@/lib/heroui-styles';
 
 interface Props {
     company: CompanySummary;
@@ -35,7 +35,7 @@ export const DeleteCompanyModal = ({ company }: Props) => {
                 size='lg'
                 isOpen={isOpen} 
                 onOpenChange={onOpenChange}
-                classNames={heroUiClassNames.modal}
+                classNames={heroUIStyles.modal}
             >
                 <ModalContent>
                     {(onClose) => (

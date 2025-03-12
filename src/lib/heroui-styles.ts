@@ -1,5 +1,5 @@
 
-export const heroUiClassNames = {
+export const heroUIStyles = {
     table: {
         table: 'rounded-none',
         wrapper: 'rounded-lg border py-6 px-12 border-gray-300 shadow-none',
@@ -22,6 +22,17 @@ export const heroUiClassNames = {
     modal: {
         base: "border border-gray-200 rounded-lg py-4",
         backdrop: "!bg-black/20"
+    },
+    select: {
+        label: "font-semibold !text-gray-600 !text-sm ",
+        trigger: "bg-white shadow-none border border-gray-300",
+        listbox: "p-0",
+        popoverContent: "!shadow-none border brder-gray-300"
+    },
+    tabs: {
+        base: "border-b border-gray-300",
+        cursor: "h-[3.5px] w-[100%] bottom-[-5px] rounded-full",
+        tab: "px-10 font-semibold"
     }
 }
 

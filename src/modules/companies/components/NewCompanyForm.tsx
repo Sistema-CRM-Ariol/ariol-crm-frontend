@@ -1,6 +1,6 @@
 import React from 'react'
 import { Input } from '@heroui/input';
-import { heroUiClassNames } from '@/lib/heroui-classnames';
+import { heroUIStyles } from '@/lib/heroui-styles';
 import { Button } from '@heroui/button';
 
 export const NewCompanyForm = () => {
@@ -15,21 +15,21 @@ export const NewCompanyForm = () => {
                             labelPlacement='outside'
                             label="Nombre"
                             placeholder='Nombre de la empresa'
-                            classNames={heroUiClassNames.input}
+                            classNames={heroUIStyles.input}
                         />
 
                         <Input
                             labelPlacement='outside'
                             label="Descripcion"
                             placeholder='Ingresa una descripción de la empresa'
-                            classNames={heroUiClassNames.input}
+                            classNames={heroUIStyles.input}
                         />
 
                         <Input
                             labelPlacement='outside'
                             label="Dirección"
                             placeholder='Ingresa una dirección fisica'
-                            classNames={heroUiClassNames.input}
+                            classNames={heroUIStyles.input}
                         />
 
                     </div>

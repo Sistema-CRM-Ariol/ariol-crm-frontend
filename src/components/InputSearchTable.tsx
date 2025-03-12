@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { Input } from "@heroui/input";
 import { Button } from "@heroui/button";
 import { Search01Icon } from "hugeicons-react";
-import { heroUiClassNames } from "@/lib/heroui-classnames";
+import { heroUIStyles } from "@/lib/heroui-styles";
 
 interface Props {
     placeholder: string;
@@ -27,7 +27,7 @@ export const InputSearchTable = ({ placeholder }: Props) => {
         <Input
             value={searchInput}
             onChange={e => setSearchInput(e.target.value)}
-            classNames={{ ...heroUiClassNames.input, innerWrapper: "!pr-0" }}
+            classNames={{ ...heroUIStyles.input, innerWrapper: "!pr-0" }}
             className='max-w-sm w-full'
             radius="md"
             placeholder={placeholder}

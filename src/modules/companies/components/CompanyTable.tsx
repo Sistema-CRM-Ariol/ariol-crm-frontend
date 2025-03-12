@@ -1,5 +1,5 @@
 "use client"
-import { heroUiClassNames } from '@/lib/heroui-classnames';
+import { heroUIStyles } from '@/lib/heroui-styles';
 
 import { useCompanies } from '../hooks/useCompanies';
 import { PaginationButtons } from '@/components/PaginationButtons';
@@ -19,7 +19,7 @@ export const CompanyTable = () => {
 
                 <Table
                     isStriped
-                    classNames={heroUiClassNames.table}
+                    classNames={heroUIStyles.table}
                     aria-label="Tabla para la gestion de empresas"
                     topContent={<CompanyTableHeader />}
                     bottomContent={

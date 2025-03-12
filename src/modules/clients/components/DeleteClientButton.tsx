@@ -1,5 +1,5 @@
 "use client"
-import { heroUiClassNames } from '@/lib/heroui-classnames'
+import { heroUIStyles } from '@/lib/heroui-styles'
 import { useDeleteClient } from '../hooks/useDeleteClient'
 import { ClientSummary } from '../interfaces/client-summary.interface'
 
@@ -32,7 +32,7 @@ export const DeleteClientButton = ({ client }: Props) => {
             <Modal
                 isOpen={isOpen}
                 onOpenChange={onOpenChange}
-                classNames={heroUiClassNames.modal}
+                classNames={heroUIStyles.modal}
             >
                 <ModalContent>
                     {(onClose) => (
