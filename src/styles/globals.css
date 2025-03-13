@@ -5,11 +5,11 @@
 @layer base {
 
   h1 {
-    @apply text-xl font-bold text-gray-800
+    @apply text-2xl font-bold text-gray-800
   }
 
   h2 {
-    @apply text-lg font-semibold text-gray-600
+    @apply text-xl font-semibold text-gray-600
   }
 
   p {
@@ -50,13 +50,11 @@
 
 @layer components {
   /* AUTH */
-
-  .login__page {
-    @apply flex w-full items-center justify-center flex-col min-h-screen
+  .auth-form {
+    @apply bg-white flex flex-col gap-4 py-8 px-8 rounded-md border border-gray-300 w-full max-w-xl
   }
-
-  .login__form {
-    @apply bg-white max-w-xl px-8 pt-8 pb-9 rounded-lg mx-auto
+  .auth {
+    @apply min-h-screen flex flex-col justify-center items-center
   }
 
   .recovery__page {
