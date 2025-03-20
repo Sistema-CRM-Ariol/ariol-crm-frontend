@@ -32,7 +32,7 @@ export const heroUIStyles = {
     tabs: {
         base: "border-b border-gray-300",
         cursor: "h-[3.5px] w-[100%] bottom-[-5px] rounded-full",
-        tab: "px-10 font-semibold"
+        tab: "px-10 font-semibold hover:!opacity-100"
     }
 }
 

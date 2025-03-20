@@ -1,4 +1,4 @@
-import { CheckListIcon, Home01Icon, PackageIcon, SaleTag01Icon, Settings01Icon, UserGroupIcon, UserIcon, UserListIcon } from "hugeicons-react";
+import { ChartIncreaseIcon, CheckListIcon, Home01Icon, PackageIcon, Settings01Icon, UserGroupIcon, UserIcon, UserListIcon, WarehouseIcon } from "hugeicons-react";
 
 // SIDE MENU OPTIONS
 export const sideMenuAplications = [
@@ -13,18 +13,23 @@ export const sideMenuAplications = [
         href: '/contacts/clients'
     },
     {
-        name: 'Inventarios',
-        icon: <CheckListIcon size={22}/>,
-        href: '/inventory'
-    },
-    {
         name: 'Productos',
         icon: <PackageIcon size={22}/>,
         href: '/products'
     },
     {
-        name: 'Ventas',
-        icon: <SaleTag01Icon size={22}/>,
+        name: 'Almacenes',
+        icon: <WarehouseIcon size={22}/>,
+        href: '/warehouses'
+    },
+    {
+        name: 'Inventarios',
+        icon: <CheckListIcon size={22}/>,
+        href: '/inventory'
+    },
+    {
+        name: 'Salidas',
+        icon: <ChartIncreaseIcon size={22}/>,
         href: '/sales'
     },
 ]
