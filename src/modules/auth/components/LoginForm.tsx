@@ -1,15 +1,18 @@
 "use client"
+import Link from 'next/link';
 import { useState } from 'react'
 
 import { heroUIStyles } from '@/lib/heroui-styles';
 
 import { Input } from '@heroui/input';
 import { Button } from '@heroui/button';
-import { SecurityPasswordIcon,ForgotPasswordIcon, PasswordValidationIcon, EyeIcon } from 'hugeicons-react';
-import Link from 'next/link';
+import { ViewOffIcon, ViewIcon } from 'hugeicons-react';
+import { useLoginUser } from '../hooks/useLoginUser';
 
 export const LoginForm = () => {
-
+    
+    const { handleSubmit, isLoading } = useLoginUser();
+    
     const [showPassword, setShowPassword] = useState(false);
 
     const handleShowPassword = () => {
@@ -17,7 +20,7 @@ export const LoginForm = () => {
     }
 
     return (
-        <form className='auth-form'>
+        <form onSubmit={handleSubmit} className='auth-form'>
             <div>
                 <h1>Inicia Sesión</h1>
                 <p>Ingresa tus credenciales para acceder al sistema</p>
@@ -25,11 +28,13 @@ export const LoginForm = () => {
 
             <Input
                 label="Correo electronico"
+                name="email"
                 placeholder='Ingresa tu correo electronico'
                 classNames={heroUIStyles.input}
             />
 
             <Input
+                name="password"
                 label="Contraseña"
                 placeholder='Ingresa su contraseña'
                 classNames={heroUIStyles.input}
@@ -38,18 +43,22 @@ export const LoginForm = () => {
                     showPassword
                         ? (
                             <Button
+                                size='sm'
                                 isIconOnly
+                                radius='full'
                                 variant='light'
                                 onPress={handleShowPassword}
-                                startContent={<PasswordValidationIcon size={20} />}
+                                startContent={<ViewIcon size={20} />}
                             />
                         )
                         : (
                             <Button
+                                size='sm'
                                 isIconOnly
+                                radius='full'
                                 variant='light'
                                 onPress={handleShowPassword}
-                                startContent={<EyeIcon size={20} />}
+                                startContent={<ViewOffIcon size={20} />}
                             />
                         )
                 }
@@ -59,6 +68,7 @@ export const LoginForm = () => {
                 fullWidth
                 type='submit'
                 color='primary'
+                isLoading={isLoading}
             >
                 Iniciar Sesión
             </Button>
