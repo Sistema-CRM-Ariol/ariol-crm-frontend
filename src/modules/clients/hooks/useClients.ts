@@ -1,64 +1,50 @@
 "use client"
 import { useEffect, useState } from "react"
-import { ClientSummary } from "../interfaces/client-summary.interface"
-import { useQuery } from "@tanstack/react-query"
-import { getAllClients } from "../actions/get-all-clients"
-import { PaginationMeta } from "@/interfaces/pagination"
 import { useSearchParams } from "next/navigation"
 
+import { useQuery } from "@tanstack/react-query"
+import { getAllClients } from "../actions/get-all-clients"
+
 export const useClients = () => {
-
+    
     const queryParams = useSearchParams()
-
     const pageParams = queryParams.get('page')
     const limitParams = queryParams.get('limit')
     const searchParams = queryParams.get('search')
-
-
-    const [meta, setMeta] = useState<PaginationMeta>()
-    const [clients, setClients] = useState<ClientSummary[]>([])
+    const isActiveParams = queryParams.get('isActive')
 
     const [page, setPage] = useState(1)
-    const [limit, setLimit] = useState(10)
+    const [limit, setLimit] = useState(5)
     const [search, setSearch] = useState('')
-
-
+    const [isActive, setIsActive] = useState<string | undefined>(undefined)
 
     const { data, isLoading } = useQuery({
-        queryKey: ['clients', page, limit, search],
-        queryFn: () => getAllClients({ page, limit, search }), // <-- Envía un objeto
-        staleTime: 1000 * 60 * 60 * 24,
+        queryKey: ['clients', page, limit, search, isActive],
+        queryFn: () => getAllClients({ page, limit, search, isActive }),
+        staleTime: 1000 * 60 * 60 * 24
     })
 
+
+
     useEffect(() => {
-        console.log(pageParams)
         if (pageParams) {
             setPage(Number(pageParams))
         }
+
         if (limitParams) {
             setLimit(Number(limitParams))
         }
 
         setSearch(searchParams ?? '')
 
-    }, [pageParams, limitParams, searchParams])
+        setIsActive(isActiveParams ?? undefined)
 
-    useEffect(() => {
-        if (data) {
-            setMeta(data.meta);
-            setClients(data.clients);
-            return;
-        }
+    }, [pageParams, limitParams, searchParams, isActiveParams])
 
-        setClients([]);
-    }, [data])
 
     return {
-        clients,
-        page,
-        limit,
-        search,
         isLoading,
-        meta
+        meta: data?.meta,
+        clients: data?.clients ?? [],
     }
 }

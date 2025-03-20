@@ -23,6 +23,11 @@ export const formatDate = (isoDate: Date): string => {
 export const handleServerActionError = (error: unknown) => {
     if( isAxiosError(error) ){
         const { response } = error;
+        console.log(response?.data)
+        // VERIFICAR SI LA RESPONSE ES UN ARRAY
+        if( response?.data?.message && Array.isArray(response.data.message) ){
+            return response.data.message.join(', ');
+        }
 
         if( response?.data?.message ){
             return response.data.message;

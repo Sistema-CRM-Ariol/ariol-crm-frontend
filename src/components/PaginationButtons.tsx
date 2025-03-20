@@ -32,10 +32,7 @@ export const PaginationButtons = ({ page, totalPages }: Props) => {
         <div className="py-2 px-2 flex justify-between items-center">
             <Pagination
                 showControls
-                classNames={{
-                    cursor: "bg-primary-500 text-background",
-                }}
-                color="default"
+                color="primary"
                 isDisabled={isLoading}
                 page={page}
                 total={totalPages || 1}

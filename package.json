@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@heroui/button": "^2.2.10",
+    "@heroui/chip": "^2.2.12",
+    "@heroui/dropdown": "^2.3.16",
     "@heroui/form": "^2.1.14",
     "@heroui/input": "^2.4.10",
     "@heroui/modal": "^2.2.8",
@@ -20,6 +22,7 @@
     "@heroui/tabs": "^2.2.8",
     "@heroui/theme": "^2.4.11",
     "@heroui/toast": "^2.0.5",
+    "@heroui/tooltip": "^2.2.13",
     "@react-pdf/renderer": "^4.2.2",
     "@tanstack/react-query": "^5.67.1",
     "axios": "^1.7.9",

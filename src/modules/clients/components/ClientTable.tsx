@@ -1,13 +1,14 @@
 "use client"
-import { PaginationButtons } from '@/components/PaginationButtons';
 import { useClients } from '../hooks/useClients'
 import { heroUIStyles } from '@/lib/heroui-styles';
-import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/table"
 import { ClientTableHeader } from './ClientTableHeader';
-import { DeleteClientButton } from './DeleteClientButton';
+import { PaginationButtons } from '@/components/PaginationButtons';
+import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/table"
+import { Chip } from '@heroui/chip';
+import { ChangeStatusButton } from '@/components/ChangeStatusButton';
+import { useChangeClientStatus } from '../hooks/useChangeClientStatus';
 
 export const ClientTable = () => {
-
     const { clients, meta, isLoading } = useClients();
 
     return (
@@ -16,6 +17,7 @@ export const ClientTable = () => {
 
                 <Table
                     isStriped
+                    isCompact
                     classNames={heroUIStyles.table}
                     aria-label="Tabla para la gestion de clientes"
                     topContent={
@@ -27,6 +29,7 @@ export const ClientTable = () => {
                 >
                     <TableHeader>
                         <TableColumn>NIT</TableColumn>
+                        <TableColumn>Estado</TableColumn>
                         <TableColumn>Nombre</TableColumn>
                         <TableColumn>Cargo</TableColumn>
                         <TableColumn>Direccion</TableColumn>
@@ -37,20 +40,32 @@ export const ClientTable = () => {
                     <TableBody
                         isLoading={isLoading}
                         loadingContent={"Cargando..."}
-                        emptyContent={"No se encontradron clientes"}
+                        emptyContent={"No hay clientes para mostrar"}
                     >
                         {
                             clients.map(client => (
-
                                 <TableRow key={client.id} className='text-gray-600 font-medium'>
                                     <TableCell>{client.nit}</TableCell>
+                                    <TableCell>
+                                        <Chip
+                                            size='sm'
+                                            variant='dot'
+                                            classNames={heroUIStyles.chip}
+                                            color={client.isActive ? "success" : "danger"}
+                                        >
+                                            {client.isActive ? "Activo" : "Desactivado"}
+                                        </Chip>
+                                    </TableCell>
                                     <TableCell>{client.name}</TableCell>
                                     <TableCell>{client.position}</TableCell>
                                     <TableCell>{client.address}</TableCell>
                                     <TableCell>{client.emails[0] ? client.emails[0] : 'No agregados'}</TableCell>
                                     <TableCell>{client.phones[0] ? client.phones[0] : 'No agregados'}</TableCell>
                                     <TableCell className='flex'>
-                                        <DeleteClientButton client={client} />
+                                        <ChangeClientStatus
+                                            id={client.id}
+                                            status={ client.isActive }
+                                        />
                                     </TableCell>
                                 </TableRow>
                             ))
@@ -60,5 +75,23 @@ export const ClientTable = () => {
             </div>
 
         </section>
+    )
+}
+
+
+const ChangeClientStatus = ({ id, status }: { id: string, status: boolean }) => {
+
+    const { handleDeactivateClient, isPending } = useChangeClientStatus()
+
+    return (
+        <ChangeStatusButton
+            isActive={status}
+            onChangeStatus={(status) => handleDeactivateClient(id, status)}
+            isPending={isPending}
+            tooltipLabels={{
+                activate: "Activar cliente",
+                deactivate: "Desactivar cliente"
+            }}
+        />
     )
 }

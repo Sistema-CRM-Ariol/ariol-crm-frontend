@@ -1,27 +1,37 @@
 "use server"
 
-import { PaginatedResponse } from "@/interfaces/pagination"
-import { ClientSummary } from "../interfaces/client-summary.interface"
 import apiClient from "@/lib/apiClient"
 import { handleServerActionError } from "@/lib/helpers"
 
-export const getAllClients = async (options: {
+import { PaginatedResponse } from "@/interfaces/pagination"
+import { ClientSummary } from "../interfaces/client-summary.interface"
+
+
+
+interface GetAllCliensOptions {
     page: number;
     limit: number;
     search?: string;
-}) => {
+    isActive?: string;
+}
+
+
+type GetAllClientsResponse = PaginatedResponse<ClientSummary, 'clients'>
+
+export const getAllClients = async ({ limit, page, search, isActive}: GetAllCliensOptions) => {
     try {
-        const { data } = await apiClient.get<PaginatedResponse<ClientSummary, 'clients'>>('/clients', {
+        const { data } = await apiClient.get<GetAllClientsResponse>('/clients', {
             params: {
-                page: options.page,
-                limit: options.limit,
-                search: options.search
+                page,
+                limit,
+                search,
+                isActive
             }
         })
 
         return data;
 
     } catch (error) {
-        return handleServerActionError(error);
+        throw handleServerActionError(error);
     }
 }

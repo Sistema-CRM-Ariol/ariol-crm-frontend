@@ -7,5 +7,6 @@ export interface ClientSummary {
     emails:    string[];
     phones:    string[];
     position:  string;
+    isActive:  boolean;
     createdAt: Date;
 }
