@@ -13,7 +13,7 @@ import { formatDate } from "@/lib/helpers";
 export const BrandTable = () => {
     const { brands, isLoading, meta } = useBrands();
     return (
-        <section className='pt-8'>
+        <section className='animated-section'>
             <div className="container">
                 <Table
                     isStriped

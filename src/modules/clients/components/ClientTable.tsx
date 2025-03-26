@@ -12,7 +12,7 @@ export const ClientTable = () => {
     const { clients, meta, isLoading } = useClients();
 
     return (
-        <section className='pt-8'>
+        <section className='animated-section'>
             <div className="container">
 
                 <Table

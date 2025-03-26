@@ -14,7 +14,7 @@ export const CompanyTable = () => {
     const { companies, meta, isLoading } = useCompanies();
 
     return (
-        <section className='pt-8'>
+        <section className='animated-section'>
             <div className="container">
 
                 <Table

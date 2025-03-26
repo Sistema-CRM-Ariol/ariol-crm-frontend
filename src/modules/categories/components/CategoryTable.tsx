@@ -16,7 +16,7 @@ export const CategoryTable = () => {
     
 
     return (
-        <section className='pt-8'>
+        <section className='animated-section'>
             <div className="container">
                 <Table
                     isStriped

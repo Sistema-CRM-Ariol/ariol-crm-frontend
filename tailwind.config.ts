@@ -18,6 +18,7 @@ export default {
     }
   },
   plugins: [
+    require('tailwindcss-animated'),
     heroui({
       defaultTheme: 'light',
       layout: {

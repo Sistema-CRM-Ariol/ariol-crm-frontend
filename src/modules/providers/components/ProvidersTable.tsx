@@ -14,7 +14,7 @@ export const ProvidersTable = () => {
     const { providers, isLoading, meta } = useProviders();
 
     return (
-        <section className='pt-8'>
+        <section className='animated-section'>
             <div className="container">
                 <Table
                     isStriped

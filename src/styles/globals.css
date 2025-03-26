@@ -54,6 +54,10 @@
   .header--container {
     @apply container flex flex-col justify-start gap-4
   }
+
+  .animated-section {
+    @apply pt-8 animate-fade animate-ease-in-out
+  }
 }
 
 @layer components {
@@ -188,6 +192,7 @@
 
   .client-overview__card {
     @apply bg-white border rounded-lg p-6 py-4 text-wrap space-y-4 max-w-xs w-full
+    animate-fade-up animate-ease-in-out
   }
 
   /* PRODUCTS */
