@@ -1,17 +1,24 @@
 "use client"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+
 import { heroUIStyles } from "@/lib/heroui-styles"
+
 import { Tab, Tabs } from "@heroui/tabs"
 import { GridViewIcon, Layers02Icon, PackageIcon, PackageReceiveIcon } from "hugeicons-react"
 
 
 export const ProductsNavTabs = () => {
+    
+    const pathname = usePathname()
+
     return (
         <Tabs
             color="primary"
             variant="underlined"
             classNames={heroUIStyles.tabs}
             aria-label="Products management options"
+            selectedKey={pathname.split('/')[pathname.split('/').length - 1]}
         >
 
             <Tab

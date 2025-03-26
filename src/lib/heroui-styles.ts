@@ -30,9 +30,9 @@ export const heroUIStyles = {
         popoverContent: "!shadow-none border brder-gray-300"
     },
     tabs: {
-        base: "border-b border-gray-300",
-        cursor: "h-[3.5px] w-[100%] bottom-[-5px] rounded-full",
-        tab: "px-10 font-semibold hover:!opacity-100"
-    }
+        base: "border-b border-gray-300 w-full overflow-visible cursor-default",
+        cursor: "h-[3.5px] w-[100%] bottom-[-5px] rounded-full overflow-visible",
+        tab: "px-10 font-semibold cursor-default"
+    },
 }
 
