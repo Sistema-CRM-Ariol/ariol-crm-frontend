@@ -1,13 +1,14 @@
 "use client"
+import Image from "next/image";
 
 import { heroUIStyles } from "@/lib/heroui-styles"
 import { useProducts } from "../hooks/useProducts"
+import NotImage from "@/assets/images/not-image.jpg";
 
 import { Chip } from '@heroui/chip';
-import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/table"
-
 import { PaginationButtons } from "@/components/PaginationButtons"
 import { ProductTableHeader } from "./ProductTableHeader";
+import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/table"
 
 
 export const ProductTable = () => {
@@ -47,9 +48,24 @@ export const ProductTable = () => {
                         {
                             products.map(product => (
                                 <TableRow key={product.id} className='text-gray-600 font-medium'>
-                                    <TableCell>{product.serialNumber}</TableCell>
-                                    <TableCell>{product.image}</TableCell>
-                                    <TableCell>{product.name}</TableCell>
+
+                                    <TableCell>
+                                        {product.serialNumber}
+                                    </TableCell>
+
+                                    <TableCell>
+                                        <Image
+                                            src={NotImage}
+                                            alt={product.name}
+                                            width={50}
+                                            height={50}
+                                        />
+                                    </TableCell>
+
+                                    <TableCell width={250}>
+                                        {product.name}
+                                    </TableCell>
+
                                     <TableCell>
                                         <Chip
                                             size='sm'
@@ -60,15 +76,21 @@ export const ProductTable = () => {
                                             {product.isActive ? "Activo" : "Desactivado"}
                                         </Chip>
                                     </TableCell>
-                                    <TableCell>{product.category.name}</TableCell>
-                                    <TableCell>{product.brand.name}</TableCell>
-                                    <TableCell>{product.provider.name}</TableCell>
-                                    <TableCell className='flex'>
+                                    
+                                    <TableCell>
+                                        {product.category.name}
+                                    </TableCell>
+                                    
+                                    <TableCell>
+                                        {product.brand.name}
+                                    </TableCell>
+                                    
+                                    <TableCell>
+                                        {product.provider.name}
+                                    </TableCell>
+                                   
+                                    <TableCell>
                                         Acciones
-                                        {/* <ChangeClientStatus
-                                            id={client.id}
-                                            status={client.isActive}
-                                        /> */}
                                     </TableCell>
                                 </TableRow>
                             ))

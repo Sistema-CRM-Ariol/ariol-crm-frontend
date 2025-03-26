@@ -22,7 +22,7 @@ export const ProductsNavTabs = () => {
         >
 
             <Tab
-                key="clients"
+                key="products"
                 title={
                     <Link href="/products">
                         <div className="flex items-center space-x-2">
