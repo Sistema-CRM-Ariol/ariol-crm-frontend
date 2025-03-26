@@ -1,8 +1,13 @@
+import { Suspense } from 'react';
+
+import { BrandTable } from '../../../../modules/brands/components/BrandTable';
 
 export default function BrandsPage() {
     return (
-        <div>
-            <h1>Hello Page</h1>
-        </div>
+        <>
+            <Suspense>
+                <BrandTable/>
+            </Suspense>
+        </>
     );
 }
