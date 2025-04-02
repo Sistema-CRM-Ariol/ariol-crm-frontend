@@ -1,6 +1,8 @@
 import "@/styles/globals.css";
 import { Gilroy } from "@/config";
+import { Quicksand } from 'next/font/google'
 import Providers from "@/components/Providers";
+const roboto = Quicksand({ subsets: ['latin'], weight: ["300", "400", "500", "700"] })
 
 
 export default function RootLayout({
@@ -11,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body
-        className={`${Gilroy.className} antialiased relative`}
+        className={`${ roboto.className } antialiased relative`}
       >
         <Providers>
           {children}

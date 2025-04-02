@@ -32,7 +32,7 @@
 
   /* SIDE MENU */
   .sidemenu {
-    @apply max-w-72 2xl:max-w-[320px] w-full bg-white h-screen px-8 pt-6 pb-8 border-r border-gray-300
+    @apply max-w-72 2xl:max-w-[300px] w-full bg-white h-[93vh] px-8 pt-6 pb-8 border-r border-gray-300
   }
 
   .sidemenu__logo {
@@ -61,6 +61,10 @@
 }
 
 @layer components {
+  /* APPBAR */
+  .appbar {
+    @apply bg-white border-b border-gray-200 flex justify-between w-full h-[7vh]
+  }
 
   /* TABLE */
   .table__header {
@@ -83,8 +87,6 @@
   .form__header {
     @apply flex flex-col mb-4
   }
-
-
 
   /* AUTH */
   .auth-form {
