@@ -7,11 +7,11 @@ export default async function DashboardLayout({
 }: {
     children: React.ReactNode;
 }) {
-    // const isValidToken = await validateToken();
+    const isValidToken = await validateToken();
 
-    // if( !isValidToken ){
-    //     redirect('/auth/login');
-    // }
+    if( !isValidToken ){
+        redirect('/auth/login');
+    }
 
     return (
         <div className="admin-layout">

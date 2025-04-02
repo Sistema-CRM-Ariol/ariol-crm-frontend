@@ -4,6 +4,7 @@ import { toast } from "sonner";
 
 import { useRouter } from 'next/navigation';
 import { loginUser } from "../actions/login-user";
+import { addToast } from "@heroui/toast";
 
 
 export const useLoginUser = () => {
@@ -22,12 +23,14 @@ export const useLoginUser = () => {
         const password = form.elements.namedItem('password') as HTMLInputElement;
 
         const { data, error } = await loginUser(email.value, password.value);
-
+        
         if (error) {
             email.value = "";
             password.value = "";
-            
-            toast.error(error);
+            addToast({
+                title: error,
+                color: "danger"
+            })
             setIsLoading(false);
             return;
         }
@@ -36,7 +39,7 @@ export const useLoginUser = () => {
         
         setIsLoading(false);
 
-        router.push('/admin/dashboard');
+        router.push('/catalog/products');
     }
 
 

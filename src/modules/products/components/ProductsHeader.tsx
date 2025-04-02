@@ -8,7 +8,7 @@ export const ProductsHeader = () => {
             <div className="header--container">
                 <div className='flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between'>
                     <TitlePage
-                        title="Gestion de productos"
+                        title="Catalogo de productos"
                         subtitle="Controla toda la información relaciona con tus productos"
                     />
                 </div>

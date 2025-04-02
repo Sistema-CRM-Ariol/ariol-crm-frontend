@@ -12,7 +12,6 @@ export default function Providers({
         <>
             <ToastProvider
                 placement='top-center'
-                
             />
             <QueryClientProvider client={ queryClient }>
                 { children }

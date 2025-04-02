@@ -15,7 +15,7 @@ export const sideMenuAplications = [
     {
         name: 'Productos',
         icon: <PackageIcon size={22}/>,
-        href: '/products'
+        href: '/catalog/products'
     },
     {
         name: 'Almacenes',

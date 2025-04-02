@@ -24,7 +24,7 @@ export const ProductsNavTabs = () => {
             <Tab
                 key="products"
                 title={
-                    <Link href="/products">
+                    <Link href="/catalog/products">
                         <div className="flex items-center space-x-2">
                             <PackageIcon size={20} />
                             <span>Productos</span>
@@ -35,7 +35,7 @@ export const ProductsNavTabs = () => {
             <Tab
                 key="categories"
                 title={
-                    <Link href="/categories">
+                    <Link href="/catalog/categories">
                         <div className="flex items-center space-x-2">
                             <Layers02Icon size={20} />
                             <span>Categorias</span>
@@ -47,7 +47,7 @@ export const ProductsNavTabs = () => {
             <Tab
                 key="brands"
                 title={
-                    <Link href="/brands">
+                    <Link href="/catalog/brands">
                         <div className="flex items-center space-x-2">
                             <GridViewIcon size={20} />
                             <span>Marcas</span>
@@ -59,7 +59,7 @@ export const ProductsNavTabs = () => {
             <Tab
                 key="providers"
                 title={
-                    <Link href="/providers">
+                    <Link href="/catalog/providers">
                         <div className="flex items-center space-x-2">
                             <PackageReceiveIcon size={20} />
                             <span>Provedores</span>
