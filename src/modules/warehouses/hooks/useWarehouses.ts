@@ -20,7 +20,7 @@ export const useWarehouses = () => {
     const [isActive, setIsActive] = useState<string | undefined>(undefined)
 
     const { data, isLoading } = useQuery({
-        queryKey: ['products', page, limit, search, isActive],
+        queryKey: ['warehouses', page, limit, search, isActive],
         queryFn: () => getAllWarehouses({ page, limit, search, isActive }),
         staleTime: 1000 * 60 * 60 * 24
     })

@@ -13,7 +13,7 @@
   }
 
   p {
-    @apply text-slate-500 font-normal text-base
+    @apply text-slate-500 font-normal text-sm
   }
 }
 
@@ -74,6 +74,17 @@
   .table__header--options {
     @apply flex flex-col gap-4 lg:flex-row justify-between lg:items-center
   }
+
+  /* FORM */
+  .form {
+    @apply flex flex-col bg-white border border-gray-300 rounded-lg py-8 px-12
+  }
+
+  .form__header {
+    @apply flex flex-col mb-4
+  }
+
+
 
   /* AUTH */
   .auth-form {
@@ -160,11 +171,6 @@
     @apply grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8
   }
 
-  /* WAREHOUSE */
-  .warehouse__form {
-    @apply bg-white p-6 space-y-6 rounded-lg
-  }
-
   /* CLIENTS */
   .contacts__header {
     @apply pt-6
@@ -231,5 +237,10 @@
 
   .checkout__form--panel {
     @apply col-span-12 xl:col-span-4 sticky top-4 space-y-4
+  }
+
+  /* WAREHOUSES */
+  .warehouse__form {
+
   }
 }

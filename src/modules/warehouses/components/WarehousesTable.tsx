@@ -70,7 +70,7 @@ export const WarehousesTable = () => {
                                     <TableCell>
                                         {formatDate(warehouse.updatedAt)}
                                     </TableCell>
-                                    <TableCell className='flex'>
+                                    <TableCell>
                                         Acciones
                                     </TableCell>
                                 </TableRow>
