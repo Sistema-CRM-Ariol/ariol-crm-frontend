@@ -61,6 +61,11 @@
 }
 
 @layer components {
+  .overview-card {
+    @apply bg-white border rounded-lg p-8 text-wrap space-y-4 max-w-xs w-full
+    animate-fade-up animate-ease-in-out
+  }
+
   /* APPBAR */
   .appbar {
     @apply bg-white border-b border-gray-200 flex justify-between w-full h-[7vh]

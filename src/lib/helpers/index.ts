@@ -21,29 +21,56 @@ export const formatDate = (isoDate: Date): string => {
 
 
 export const handleServerActionError = (error: unknown) => {
-    if( isAxiosError(error) ){
+    if (isAxiosError(error)) {
         const { response } = error;
         console.log(response?.data)
         // VERIFICAR SI LA RESPONSE ES UN ARRAY
-        if( response?.data?.message && Array.isArray(response.data.message) ){
+        if (response?.data?.message && Array.isArray(response.data.message)) {
             return response.data.message.join(', ');
         }
 
-        if( response?.data?.message ){
+        if (response?.data?.message) {
             return response.data.message;
         }
     }
-    
-    else if( error instanceof Error ){
+
+    else if (error instanceof Error) {
         return error.message;
     }
-    
-    else if( typeof error === 'string' ){
+
+    else if (typeof error === 'string') {
         return error;
     }
 
-    else{
+    else {
         return 'Error desconocido';
     }
 
+}
+
+
+export function compactFormat(value: number) {
+    const formatter = new Intl.NumberFormat("en", {
+        notation: "compact",
+        compactDisplay: "short",
+    });
+
+    return formatter.format(value);
+}
+
+export function standardFormat(value: number) {
+    return value.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    });
+}
+
+export function createTimeFrameExtractor(
+    selectedTimeFrame: string | undefined,
+) {
+    return (sectionKey: string) => {
+        return selectedTimeFrame
+            ?.split(",")
+            .find((value) => value.includes(sectionKey));
+    };
 }

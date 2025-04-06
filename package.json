@@ -28,11 +28,13 @@
     "@heroui/user": "^2.2.12",
     "@react-pdf/renderer": "^4.2.2",
     "@tanstack/react-query": "^5.67.1",
+    "apexcharts": "^4.5.0",
     "axios": "^1.7.9",
     "framer-motion": "^12.4.3",
     "hugeicons-react": "^0.3.0",
     "next": "15.1.7",
     "react": "^19.1.0",
+    "react-apexcharts": "^1.7.0",
     "react-dom": "^19.1.0",
     "sonner": "^1.7.4",
     "tailwindcss-animated": "^2.0.0"
