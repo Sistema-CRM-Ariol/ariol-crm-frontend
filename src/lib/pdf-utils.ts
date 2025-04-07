@@ -1,6 +1,5 @@
 import path from "path";
 import { Font, StyleSheet } from "@react-pdf/renderer";
-import { table } from "console";
 
 // Obtener ruta absoluta (adaptar según tu estructura de carpetas)
 const gilroyRegular = path.join(process.cwd(), "src/assets/fonts/gilroy/Gilroy-Regular.ttf");

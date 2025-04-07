@@ -1,27 +1,21 @@
-import { cn } from '@heroui/theme';
-import { ArrowDown01Icon, ArrowUp01Icon, TradeDownIcon, TradeUpIcon } from 'hugeicons-react';
 import { JSX } from 'react';
-import React, { SVGProps } from 'react'
 
-interface Props {
-    icon: React.ReactNode
-    title: string
-    value: string
-}
-type PropsType = {
+import { cn } from '@heroui/theme';
+import { TradeDownIcon, TradeUpIcon } from 'hugeicons-react';
+
+type Props = {
     label: string;
     data: {
         value: number | string;
         growthRate: number;
     };
-    // Icon: JSX.Element;
     icon: JSX.Element;
     iconColor?: string;
 };
-export const OverviewCard = ({ icon, data, label, iconColor }: PropsType) => {
+
+export const OverviewCard = ({ icon, data, label, iconColor }: Props) => {
 
     const isDecreasing = data.growthRate < 0;
-
 
     return (
         <div className="rounded-[10px] bg-white p-6 shadow-1 dark:bg-gray-dark border border-gray-300">
@@ -66,15 +60,4 @@ export const OverviewCard = ({ icon, data, label, iconColor }: PropsType) => {
             </div>
         </div>
     );
-
-    // return (
-    //     <div className='overview-card'>
-    //         <div className='flex items-center gap-2'>
-    //             { icon }
-    //             <h3 className='font-bold'>{ title }</h3>
-    //         </div>
-    //         <p className='text-gray-700'>{ value }</p>
-    //     </div>
-
-    // )
 }

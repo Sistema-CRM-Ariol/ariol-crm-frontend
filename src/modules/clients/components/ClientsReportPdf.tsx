@@ -1,9 +1,7 @@
 import { pdfStyles } from '@/lib/pdf-utils'
-import { Page, Text, View, Document, Svg, Image } from '@react-pdf/renderer';
+import { Page, Text, View, Document, Image } from '@react-pdf/renderer';
 import { ClientSummary } from '../interfaces/client-summary.interface';
 import { formatDate } from '@/lib/helpers';
-
-const logo = require('@/assets/images/ariol-logo.jpg').default
 
 interface Props {
     clients: ClientSummary[];

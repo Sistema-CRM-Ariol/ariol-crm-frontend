@@ -1,8 +1,6 @@
 "use client"
-import React from 'react'
 import { User } from '@heroui/user'
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@heroui/dropdown'
-import { heroUIStyles } from '@/lib/heroui-styles'
 
 export const AppBarUser = () => {
 

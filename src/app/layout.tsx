@@ -1,5 +1,4 @@
 import "@/styles/globals.css";
-import { Gilroy } from "@/config";
 import { Quicksand } from 'next/font/google'
 import Providers from "@/components/Providers";
 const roboto = Quicksand({ subsets: ['latin'], weight: ["300", "400", "500", "700"] })

@@ -1,7 +1,7 @@
 
 import { Button } from '@heroui/button';
 import { Alert02Icon, Delete02Icon } from 'hugeicons-react';
-import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@heroui/modal'
+import { Modal, ModalBody, ModalContent, ModalFooter, useDisclosure } from '@heroui/modal'
 
 import { useDeleteCompany } from '../hooks/useDeleteCompany';
 import { CompanySummary } from '../interfaces/company-summary.interface';

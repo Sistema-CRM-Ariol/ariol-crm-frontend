@@ -1,14 +1,15 @@
 "use client"
 import React from 'react'
 import Image from 'next/image';
+
 import NotImage from '@/assets/images/not-image.jpg';
 
+import { useProducts } from '../hooks/useProducts';
 import { heroUIStyles } from '@/lib/heroui-styles'
 import { Table, TableBody, TableColumn, TableHeader, TableRow, TableCell } from '@heroui/table';
-import { useProducts } from '../hooks/useProducts';
 
 export const TopProducts = () => {
-    const { products, isLoading, meta } = useProducts();
+    const { products, isLoading } = useProducts();
 
     return (
         <Table
@@ -26,12 +27,12 @@ export const TopProducts = () => {
                 <TableColumn>Marca</TableColumn>
             </TableHeader>
             <TableBody
-                // isLoading={isLoading}
+                isLoading={isLoading}
                 loadingContent={"Cargando..."}
                 emptyContent={"No hay productos para mostrar"}
             >
                 {
-                    products.map((product: any) => (
+                    products.map((product) => (
                         <TableRow key={product.id} className='text-gray-600 font-medium'>
 
                             <TableCell>

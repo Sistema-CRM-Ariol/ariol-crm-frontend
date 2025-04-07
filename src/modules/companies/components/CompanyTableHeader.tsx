@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@heroui/button';
 import { Download01Icon, PlusSignIcon } from 'hugeicons-react';
 
-import { SearchClientInput } from '@/modules/clients/components/SearchClientInput';
 import { InputSearchTable } from '@/components/InputSearchTable';
 
 
