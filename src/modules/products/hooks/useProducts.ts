@@ -15,7 +15,7 @@ export const useProducts = () => {
     const isActiveParams = queryParams.get('isActive')
 
     const [page, setPage] = useState(1)
-    const [limit, setLimit] = useState(10)
+    const [limit, setLimit] = useState(5)
     const [search, setSearch] = useState('')
     const [isActive, setIsActive] = useState<string | undefined>(undefined)
 

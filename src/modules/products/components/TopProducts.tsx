@@ -17,7 +17,12 @@ export const TopProducts = () => {
             isCompact
             classNames={heroUIStyles.table}
             aria-label="Tabla para la gestion de productos"
-            topContent={<h2>Productos mas vendidos</h2>}
+            topContent={
+                <div>
+                    <h2>Productos mas vendidos</h2>
+                    <p>Productos que se vendieron mas.</p>
+                </div>
+            }
         >
             <TableHeader>
                 <TableColumn>Nro Serie</TableColumn>

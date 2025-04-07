@@ -66,6 +66,10 @@
     animate-fade-up animate-ease-in-out
   }
 
+  .overview-card-container {
+    @apply container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4
+  }
+
   /* APPBAR */
   .appbar {
     @apply bg-white border-b border-gray-200 flex justify-between w-full h-[7vh]

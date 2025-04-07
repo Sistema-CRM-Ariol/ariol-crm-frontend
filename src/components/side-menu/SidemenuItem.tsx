@@ -19,14 +19,11 @@ export const SidemenuItem = ({ item }: Props) => {
 
     const pathname = usePathname()
 
-
-
-
     return (
         <Link href={item.href} className='block'>
             <Button
                 className={ 
-                    pathname.includes(item.href.split('/')[1]) 
+                    pathname.includes(item.href.split('/')[1])
                     ? 'sidemenu__item--active' 
                     : 'sidemenu__item'
                     }

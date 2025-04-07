@@ -5,7 +5,7 @@ export const sideMenuAplications = [
     {
         name: 'Dashboard',
         icon: <Home01Icon size={22}/>,
-        href: '/'
+        href: '/home'
     },
     {
         name: 'Clientes',
@@ -25,7 +25,7 @@ export const sideMenuAplications = [
     {
         name: 'Inventarios',
         icon: <CheckListIcon size={22}/>,
-        href: '/inventory'
+        href: '/inventories'
     },
     {
         name: 'Salidas',

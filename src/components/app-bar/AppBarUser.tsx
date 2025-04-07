@@ -26,9 +26,13 @@ export const AppBarUser = () => {
                         size: "sm",
                         src: user.avatar ? user.avatar : undefined,
                     }}
-                    className="transition-transform"
+                    classNames={{
+                        wrapper: "items-end"
+                    }}
+                    className="transition-transform flex-row-reverse items-center"
                     description={user.email}
                     name={`${user.name}`}
+                    
                 />
             </DropdownTrigger>
             <DropdownMenu aria-label="User Actions" variant="flat">
