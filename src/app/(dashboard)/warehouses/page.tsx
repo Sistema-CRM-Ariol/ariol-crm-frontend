@@ -1,4 +1,8 @@
+import { Suspense } from "react";
 import { Metadata } from "next";
+
+import { LoadingView } from "@/components/LoadingView";
+
 import { WarehouseHeader } from "@/modules/warehouses/components/WarehouseHeader";
 import { WarehousesTable } from "@/modules/warehouses/components/WarehousesTable";
 import { NewWarehouseForm } from "@/modules/warehouses/components/NewWarehouseForm";
@@ -8,7 +12,9 @@ export default function WarehousesPage() {
         <>
             <WarehouseHeader/>
             <NewWarehouseForm/>
-            <WarehousesTable/>
+            <Suspense fallback={<LoadingView/>}>
+                <WarehousesTable/>
+            </Suspense>
         </>
     );
 }

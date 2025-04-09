@@ -32,7 +32,7 @@
 
   /* SIDE MENU */
   .sidemenu {
-    @apply max-w-72 2xl:max-w-[300px] w-full bg-white h-[93vh] px-8 pt-6 pb-8 border-r border-gray-300
+    @apply max-w-72 2xl:max-w-[300px] w-full bg-white h-[94vh] px-8 pt-6 pb-8 border-r border-gray-300
   }
 
   .sidemenu__logo {
@@ -72,7 +72,7 @@
 
   /* APPBAR */
   .appbar {
-    @apply bg-white border-b border-gray-200 flex justify-between w-full h-[7vh]
+    @apply bg-white border-b border-gray-300 flex justify-between w-full h-[6vh]
   }
 
   /* TABLE */
@@ -146,7 +146,7 @@
 
   /* NAVMENU */
   .navbar {
-    @apply bg-white w-full py-4 sticky top-0 z-10
+    @apply bg-white w-full py-2 sticky top-0 z-10
   }
 
   .nav__container {

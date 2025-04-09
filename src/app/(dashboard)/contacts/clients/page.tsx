@@ -1,13 +1,17 @@
-
-import { ClientsOverview } from "@/modules/clients/components/ClientsOverview";
-import { ClientTable } from "@/modules/clients/components/ClientTable";
+import { Suspense } from "react";
 import { Metadata } from "next";
+
+import { LoadingView } from "@/components/LoadingView";
+import { ClientTable } from "@/modules/clients/components/ClientTable";
+import { ClientsOverview } from "@/modules/clients/components/ClientsOverview";
 
 export default function ClientsPage() {
     return (
         <>
             <ClientsOverview/>
-            <ClientTable/>
+            <Suspense fallback={<LoadingView/>}>
+                <ClientTable/>
+            </Suspense>
         </>
     );
 }
