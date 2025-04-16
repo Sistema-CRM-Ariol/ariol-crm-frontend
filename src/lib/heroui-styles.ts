@@ -10,6 +10,10 @@ export const heroUIStyles = {
         base: "rounded-md border border-gray-300 shadow-none",
         body: "pt-8 !pb-8 px-12",
     },
+    autocomplete: {
+        listbox: "bg-white border border-gray-300 radius-sm !shadow-none",
+        popoverContent: "border border-gray-300 rounded-md"
+    },
     input: {
         inputWrapper: "!bg-white border border-gray-300 pr-0 !placeholder:font-bold",
         input: "placeholder:font-semibold placeholder:text-gray-400",
@@ -18,6 +22,10 @@ export const heroUIStyles = {
     chip: {
         base: "border-none",
         content: "text-[12px] font-medium text-gray-600"
+    },
+    chipFlat: {
+        base: "bg-[inherit]",
+        content: "text-[12px] font-semibold text-[inherit] bg-[inherit]"
     },
     modal: {
         base: "border border-gray-200 rounded-lg py-4",

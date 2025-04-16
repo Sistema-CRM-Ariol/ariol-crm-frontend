@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 
 import { OverviewCardsGroup } from "@/components/overview-card/OverviewCardsGroup";
 
+import { TitlePage } from '@/components/TitlePage';
 import { TopProducts } from "@/modules/products/components/TopProducts";
 import { PaymentsOverview } from "@/modules/expenses/components/payments-overview";
 import { SalesReportDonut } from "@/modules/expenses/components/sales-report-donut";
@@ -10,12 +11,22 @@ export default function HomePage() {
 
     return (
         <>
+            <header className='pt-8'>
+                <div className="container">
+                    <TitlePage
+                        title='Dashboard'
+                        subtitle='Bienvenido a tu dashboard'
+                    />
+
+                </div>
+            </header>
+            
             <OverviewCardsGroup />
 
             <section className="pt-8">
                 <div className="container grid grid-cols-12 gap-8">
                     <div className="col-span-12">
-                        <PaymentsOverview/>
+                        <PaymentsOverview />
                     </div>
                     <div className="col-span-7">
                         <TopProducts />

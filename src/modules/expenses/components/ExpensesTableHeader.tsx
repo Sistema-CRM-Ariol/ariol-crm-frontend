@@ -1,26 +1,29 @@
-import React from 'react'
-import Link from 'next/link'
-
+import { InputSearchTable } from '@/components/InputSearchTable'
 import { Button } from '@heroui/button'
 import { Download01Icon } from 'hugeicons-react'
+import Link from 'next/link'
+import React from 'react'
 
-import { InputSearchTable } from '@/components/InputSearchTable'
-import { WarehouseFilter } from '@/modules/warehouses/components/WarehouseFilter'
-import { NewInventoryAuditModal } from './NewInventoryAuditModal'
-
-export const InventoryTableHeader = () => {
+export const ExpensesTableHeader = () => {
     return (
         <div className='table__header'>
 
-            <h2 className='table__title'>Productos en inventario</h2>
+            <h2 className='table__title'>Listado de productos</h2>
 
             <div className='table__header--options'>
-                <InputSearchTable placeholder='Buscar productos' />
+                <InputSearchTable placeholder='Buscar salida' />
 
-                <div className="flex gap-4">
-                    <WarehouseFilter/>
-                    
-                    <NewInventoryAuditModal/>
+                <div className="flex gap-3">
+                    {/* <StatusFilter /> */}
+
+                    <Link href='/contacts/clients/new'>
+                        <Button
+                            color='primary'
+                        >
+                            + Registrar salida
+                        </Button>
+                    </Link>
+
 
 
                     <Link href='/contacts/clients/general-report' target='_blank'>

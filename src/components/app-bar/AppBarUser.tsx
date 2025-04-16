@@ -1,15 +1,13 @@
 "use client"
 import { User } from '@heroui/user'
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@heroui/dropdown'
+import { User as IUser } from '@/modules/auth/interfaces/user.interface'
 
-export const AppBarUser = () => {
+interface Props {
+    user: IUser
+}
 
-    const user = {
-        name: "Tony",
-        lastname: "Reichert",
-        email: "tony.reichert@example.com",
-        avatar: undefined
-    }
+export const AppBarUser = ({ user }: Props) => {
 
     return (
         <Dropdown 

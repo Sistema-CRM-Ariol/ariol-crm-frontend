@@ -1,14 +1,25 @@
+// components/InventoryTable.tsx
 "use client"
-import { heroUIStyles } from "@/lib/heroui-styles"
-import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/table"
-import Image from "next/image"
-import NotImage from '@/assets/images/not-image.jpg';
+import Image from "next/image";
+import NotImage from "@/assets/images/not-image.jpg";
+
+
+import { standardFormat } from "@/lib/helpers";
+import { heroUIStyles } from "@/lib/heroui-styles";
+
 import { InventoryTableHeader } from "./InventoryTableHeader";
+import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/table";
+import { useRealTimeInventories } from "../hooks/useRealTimeInventories";
+import { InventoryItem } from "../interfaces/inventory-item.interface";
 
-export const InventoryTable = () => {
+interface Props {
+    initialData: InventoryItem[];
+}
 
+export const InventoryTable = ({ initialData }: Props) => {
 
-
+    const { inventories } = useRealTimeInventories(initialData);
+    
     return (
         <section className="pt-8">
             <div className="container">
@@ -16,16 +27,11 @@ export const InventoryTable = () => {
                     isStriped
                     isCompact
                     classNames={heroUIStyles.table}
-                    aria-label="Tabla para la gestion de productos"
-                    topContent={
-                        <InventoryTableHeader />
-                    }
-                // bottomContent={
-                //     <PaginationButtons totalPages={meta?.lastPage} page={meta?.page} />
-                // }
+                    aria-label="Tabla para la gestión de inventarios"
+                    topContent={<InventoryTableHeader />}
                 >
                     <TableHeader>
-                        <TableColumn>Codigo</TableColumn>
+                        <TableColumn>Código</TableColumn>
                         <TableColumn>Imagen</TableColumn>
                         <TableColumn>Nombre</TableColumn>
                         <TableColumn>Precio</TableColumn>
@@ -33,46 +39,40 @@ export const InventoryTable = () => {
                         <TableColumn>Acciones</TableColumn>
                     </TableHeader>
                     <TableBody
-                        // isLoading={isLoading}
                         loadingContent={"Cargando..."}
-                        emptyContent={"No hay productos para mostrar"}
+                        emptyContent={"No hay inventarios para mostrar"}
                     >
-
-                        <TableRow key={2} className='text-gray-600 font-medium'>
-
-                            <TableCell width={100}>
-                                SN-001-001
-                            </TableCell>
-
-                            <TableCell width={100}>
-                                <Image
-                                    src={NotImage}
-                                    alt={"product.name"}
-                                    width={50}
-                                    height={50}
-                                />
-                            </TableCell>
-
-                            <TableCell width={250}>
-                                Name
-                            </TableCell>
-
-                            <TableCell>
-                                stock
-                            </TableCell>
-
-                            <TableCell>
-                                stock
-                            </TableCell>
-
-
-                            <TableCell>
-                                Acciones
-                            </TableCell>
-                        </TableRow>
+                        {inventories.map((item) => (
+                            <TableRow key={item.id} className="text-gray-600 font-medium">
+                                <TableCell width={100}>
+                                    {item.product.serialNumber}
+                                </TableCell>
+                                <TableCell width={100}>
+                                    <Image
+                                        src={item.product.image || NotImage}
+                                        alt={item.product.name}
+                                        width={50}
+                                        height={50}
+                                    />
+                                </TableCell>
+                                <TableCell width={250}>
+                                    {item.product.name}
+                                </TableCell>
+                                <TableCell>
+                                    { standardFormat(item.product.priceSale) } Bs
+                                </TableCell>
+                                <TableCell>
+                                    {item.quantity} u.
+                                </TableCell>
+                                <TableCell>
+                                    {/* Aquí puedes agregar botones para editar o eliminar */}
+                                    Editar | Eliminar
+                                </TableCell>
+                            </TableRow>
+                        ))}
                     </TableBody>
                 </Table>
             </div>
         </section>
-    )
-}
+    );
+};

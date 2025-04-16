@@ -30,7 +30,7 @@ export const sideMenuAplications = [
     {
         name: 'Salidas',
         icon: <ChartIncreaseIcon size={22}/>,
-        href: '/sales'
+        href: '/expenses'
     },
 ]
 
