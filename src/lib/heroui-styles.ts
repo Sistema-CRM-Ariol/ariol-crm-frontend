@@ -20,8 +20,8 @@ export const heroUIStyles = {
         label: "font-semibold !text-gray-600 !text-sm ",
     },
     chip: {
-        base: "border-none",
-        content: "text-[12px] font-medium text-gray-600"
+        base: "rounded-md",
+        content: "text-[12px] font-bold"
     },
     chipFlat: {
         base: "bg-[inherit]",

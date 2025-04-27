@@ -32,9 +32,9 @@ export const CategoryTable = () => {
                 >
                     <TableHeader>
                         <TableColumn>Nombre</TableColumn>
-                        <TableColumn>Estado</TableColumn>
                         <TableColumn>F. Creación</TableColumn>
                         <TableColumn>Ultima Actualización</TableColumn>
+                        <TableColumn>Estado</TableColumn>
                         <TableColumn>Acciones</TableColumn>
                     </TableHeader>
                     <TableBody
@@ -46,18 +46,19 @@ export const CategoryTable = () => {
                             categories.map(category => (
                                 <TableRow key={category.id} className='text-gray-600 font-medium'>
                                     <TableCell>{category.name}</TableCell>
+                                    <TableCell>{formatDate(category.createdAt)}</TableCell>
+                                    <TableCell>{formatDate(category.updatedAt)}</TableCell>
                                     <TableCell>
                                         <Chip
                                             size='sm'
-                                            variant='dot'
+                                            radius='sm'
+                                            variant='bordered'
                                             classNames={heroUIStyles.chip}
                                             color={category.isActive ? "success" : "danger"}
                                         >
                                             {category.isActive ? "Activo" : "Desactivado"}
                                         </Chip>
                                     </TableCell>
-                                    <TableCell>{formatDate(category.createdAt)}</TableCell>
-                                    <TableCell>{formatDate(category.updatedAt)}</TableCell>
                                     <TableCell className='flex'>
                                         Acciones
                                         {/* <ChangeClientStatus
