@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
-import { Quicksand } from 'next/font/google'
+import {  Red_Hat_Display } from 'next/font/google'
 import Providers from "@/components/Providers";
-const roboto = Quicksand({ subsets: ['latin'], weight: ["300", "400", "500", "700"] })
+const roboto = Red_Hat_Display({ subsets: ['latin'], weight: ["300", "400", "500", "600", "700", "800", '900'] })
 
 
 export default function RootLayout({

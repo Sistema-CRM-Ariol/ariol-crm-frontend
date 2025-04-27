@@ -5,13 +5,22 @@ import { Badge } from '@heroui/badge'
 
 export const AppBarNotifications = () => {
     return (
-        <Badge content={2} color='primary'>
-            <Button
-                radius='full'
-                isIconOnly
-                variant='ghost'
-                startContent={<Notification02Icon size={20} />}
-            />
-        </Badge>
+        <div className='relative'>
+            <Badge
+                style={{
+                    bottom: '-14px',
+                    right: '-4px',
+                    translate: '-40% 30%',
+                    position: 'absolute',
+                }}
+                content={2} color='primary' variant='flat'>
+                <Button
+                    radius='full'
+                    isIconOnly
+                    variant='light'
+                    startContent={<Notification02Icon size={20} />}
+                />
+            </Badge>
+        </div>
     )
 }
