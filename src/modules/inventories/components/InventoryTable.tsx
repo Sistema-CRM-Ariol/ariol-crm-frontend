@@ -49,7 +49,7 @@ export const InventoryTable = ({ initialData }: Props) => {
                                 </TableCell>
                                 <TableCell width={100}>
                                     <Image
-                                        src={item.product.image || NotImage}
+                                        src={item.product.image ?? NotImage}
                                         alt={item.product.name}
                                         width={50}
                                         height={50}

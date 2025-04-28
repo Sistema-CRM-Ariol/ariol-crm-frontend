@@ -16,7 +16,7 @@ export const ExpensesTableHeader = () => {
                 <div className="flex gap-3">
                     {/* <StatusFilter /> */}
 
-                    <Link href='/contacts/clients/new'>
+                    <Link href='/expenses/new'>
                         <Button
                             color='primary'
                         >

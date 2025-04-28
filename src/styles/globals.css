@@ -5,7 +5,7 @@
 @layer base {
 
   h1 {
-    @apply text-2xl font-bold text-gray-800
+    @apply text-3xl font-bold text-gray-800
   }
 
   h2 {
@@ -19,7 +19,7 @@
 
 @layer utilities {
   .container {
-    @apply max-w-[95%] mx-auto
+    @apply max-w-[95%] mx-auto lg:max-w-[90%] xl:max-w-[85%] 2xl:max-w-[80%]
   }
 
   .btn-gradient {
