@@ -11,7 +11,7 @@ import { PaginationButtons } from '@/components/PaginationButtons';
 import { WarehousesTableHeader } from './WarehousesTableHeader';
 import { Button } from '@heroui/button';
 import Link from 'next/link';
-import { Download01Icon, Download02Icon, Download04Icon } from 'hugeicons-react';
+import { Download04Icon } from 'hugeicons-react';
 export const WarehousesTable = () => {
 
     const { isLoading, meta, warehouses } = useWarehouses()
