@@ -12,6 +12,10 @@
     @apply text-xl font-semibold text-gray-600
   }
 
+  h3 {
+    @apply text-lg font-semibold text-gray-600
+  }
+
   p {
     @apply text-slate-500 font-normal text-sm
   }
@@ -19,7 +23,7 @@
 
 @layer utilities {
   .container {
-    @apply max-w-[95%] mx-auto lg:max-w-[90%] xl:max-w-[85%] 2xl:max-w-[80%]
+    @apply max-w-[95%] mx-auto xl:max-w-[90%] 2xl:max-w-[85%]
   }
 
   .btn-gradient {
@@ -72,7 +76,11 @@
 
   /* APPBAR */
   .appbar {
-    @apply bg-white border-b border-gray-300 flex justify-between w-full h-[6vh]
+    @apply bg-white border-b border-gray-300 flex justify-between w-full h-[7vh]
+  }
+
+  .appbar__container {
+    @apply flex justify-between items-center max-w-[95%] w-full mx-auto
   }
 
   /* TABLE */

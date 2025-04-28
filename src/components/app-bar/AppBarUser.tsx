@@ -1,14 +1,24 @@
 "use client"
-import { User as IUser } from '@/modules/auth/interfaces/user.interface'
+import { useEffect, useState } from 'react';
+
+import { User } from '@/modules/auth/interfaces/user.interface'
+import { getUser } from '@/modules/auth/actions/get-user';
 
 import {Avatar } from "@heroui/avatar";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@heroui/dropdown'
 
-interface Props {
-    user: IUser
-}
+export const AppBarUser = () => {
+    
+    const [user, setUser] = useState<User>({} as User);
 
-export const AppBarUser = ({ user }: Props) => {
+    const fetchUser = async () => {
+        const userData = await getUser();
+        setUser(userData);
+    }
+
+    useEffect(() => {
+        fetchUser();
+    }, []);
 
     return (
         <Dropdown 

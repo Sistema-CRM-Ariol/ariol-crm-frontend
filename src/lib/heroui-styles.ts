@@ -1,3 +1,4 @@
+import { cn } from "@heroui/theme";
 
 export const heroUIStyles = {
     table: {
@@ -42,5 +43,12 @@ export const heroUIStyles = {
         cursor: "h-[3.5px] w-[100%] bottom-[-5px] rounded-full overflow-visible",
         tab: "px-10 font-semibold cursor-default"
     },
+    radio: {
+        base: cn(
+            "inline-flex m-0 bg-content1 hover:bg-content2 items-center justify-between border-1 border-gray-200",
+            "flex-row-reverse max-w-[200px] cursor-pointer rounded-lg gap-4 p-4 border-2",
+            "data-[selected=true]:border-primary",
+        ),
+    }
 }
 

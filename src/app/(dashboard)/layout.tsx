@@ -1,12 +1,7 @@
 "use client"
 
-import dynamic from 'next/dynamic';
+import AppBar from "@/components/app-bar/AppBar";
 import { Sidemenu } from "@/components/side-menu/Sidemenu";
-
-const AppBar = dynamic(() => import('@/components/app-bar/AppBar'), {
-    ssr: false, // Importante: desactiva el Server Side Rendering para este componente
-    loading: () => <div className="h-16 bg-gray-100 w-full" /> // Opcional: placeholder mientras carga
-});
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
 
@@ -17,7 +12,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <div className="flex">
                 <Sidemenu />
 
-                <main className="h-[94vh] overflow-y-auto w-full">
+                <main className="h-[92vh] pb-2 overflow-y-auto w-full">
                     {children}
                 </main>
             </div>

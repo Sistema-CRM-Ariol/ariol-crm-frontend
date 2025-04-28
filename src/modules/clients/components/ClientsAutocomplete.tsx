@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { heroUIStyles } from '@/lib/heroui-styles';
 import { Autocomplete, AutocompleteItem } from '@heroui/autocomplete';
-import { useProductsAutocomplete } from '../hooks/useProductsAutocomplete';
+import { useClientsAutocomplete } from '../hooks/useClientsAutocomplete';
 
 
 
@@ -11,15 +11,15 @@ interface Props {
 }
 
 
-export const ProductsAutocomplete = ({ onSelect }: Props) => {
+export const ClientsAutocomplete = ({ onSelect }: Props) => {
 
     const [inputValue, setInputValue] = useState('');
     const [selectedId, setSelectedId] = useState<string | null>(null);
-    const { products, isLoading } = useProductsAutocomplete(inputValue);
+    const { products, isLoading } = useClientsAutocomplete(inputValue);
 
     return (
         <Autocomplete
-            label="Buscar Unidad"
+            label="Selecciona un cliente"
             isRequired
             isLoading={isLoading}
             labelPlacement='outside'
@@ -27,7 +27,7 @@ export const ProductsAutocomplete = ({ onSelect }: Props) => {
                 classNames: { ...heroUIStyles.input, innerWrapper: "pr-4" }
             }}
             classNames={heroUIStyles.autocomplete}
-            placeholder="Escribe el nombre de la unidad"
+            placeholder="Correo o nombre del cliente"
             onInputChange={(value: string) => setInputValue(value)}
             onSelectionChange={(id) => {
                 setSelectedId(id as string); // Guarda el ID seleccionado

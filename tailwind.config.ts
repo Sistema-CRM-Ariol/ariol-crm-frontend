@@ -8,7 +8,7 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/modules/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/lib/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@heroui/theme/dist/components/(autocomplete|badge|button|chip|dropdown|form|input|modal|pagination|progress|select|table|tabs|toast|popover|user|ripple|spinner|listbox|divider|scroll-shadow|menu|checkbox|spacer|avatar).js"
+    "./node_modules/@heroui/theme/dist/components/(autocomplete|badge|button|chip|divider|dropdown|form|input|modal|pagination|progress|radio|select|table|tabs|toast|popover|user|ripple|spinner|listbox|scroll-shadow|menu|checkbox|spacer|avatar).js"
   ],
   theme: {
     extend: {
