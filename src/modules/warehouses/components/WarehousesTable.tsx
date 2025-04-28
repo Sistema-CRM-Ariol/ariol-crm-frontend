@@ -9,6 +9,9 @@ import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from 
 import { formatDate } from "@/lib/helpers";
 import { PaginationButtons } from '@/components/PaginationButtons';
 import { WarehousesTableHeader } from './WarehousesTableHeader';
+import { Button } from '@heroui/button';
+import Link from 'next/link';
+import { Download01Icon, Download02Icon, Download04Icon } from 'hugeicons-react';
 export const WarehousesTable = () => {
 
     const { isLoading, meta, warehouses } = useWarehouses()
@@ -71,7 +74,16 @@ export const WarehousesTable = () => {
                                         {formatDate(warehouse.updatedAt)}
                                     </TableCell>
                                     <TableCell>
-                                        Acciones
+                                        <Link target='_blank' href={`/warehouses/reports/${warehouse.id}`}>
+                                            <Button 
+                                                isIconOnly
+                                                variant='light'
+                                                color='secondary'
+                                                size='sm'
+                                                radius='md'
+                                                startContent={<Download04Icon size={20}/>}
+                                            />
+                                        </Link>
                                     </TableCell>
                                 </TableRow>
                             ))

@@ -8,7 +8,7 @@ export const ExpensesTableHeader = () => {
     return (
         <div className='table__header'>
 
-            <h2 className='table__title'>Listado de productos</h2>
+            <h2 className='table__title'>Listado de salidas</h2>
 
             <div className='table__header--options'>
                 <InputSearchTable placeholder='Buscar salida' />

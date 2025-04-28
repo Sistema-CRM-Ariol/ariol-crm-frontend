@@ -6,7 +6,7 @@ import { Sidemenu } from "@/components/side-menu/Sidemenu";
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
 
     return (
-        <div className="h-screen">
+        <div className="h-screen overflow-y-hidden">
             <AppBar />
 
             <div className="flex">

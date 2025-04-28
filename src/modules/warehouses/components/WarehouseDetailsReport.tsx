@@ -1,15 +1,16 @@
-import { pdfStyles } from '@/lib/pdf-utils'
+import React from 'react'
+import { Warehouse } from '../interfaces/warehouse.interface'
 import { Page, Text, View, Document, Image } from '@react-pdf/renderer';
-import { ClientSummary } from '../interfaces/client-summary.interface';
-import { formatDate } from '@/lib/helpers';
+
+import { pdfStyles } from '@/lib/pdf-utils'
+
 
 interface Props {
-    clients: ClientSummary[];
-    logo: string;  // ahora recibes el Data URI
-  }
-export const ClientsReportPdf = ({ clients, logo }: Props) => {
+    warehouse: Warehouse;
+    logo: string,
+}
 
-
+export const WarehouseDetailsReport = ({ warehouse, logo }: Props) => {
     return (
         <Document>
             <Page size="A4" style={pdfStyles.page}>
@@ -26,47 +27,47 @@ export const ClientsReportPdf = ({ clients, logo }: Props) => {
                         />
                         <View style={{ textAlign: "right" }}>
                             <Text style={pdfStyles.title}>Ariol S.A.</Text>
+                            <Text style={pdfStyles.text}>Almacén: {warehouse.name}</Text>
                             <Text style={{ ...pdfStyles.text, textAlign: "right" }}>Calle 1 # 2 - 3</Text>
                             <Text style={pdfStyles.text}>Teléfono: 123456789</Text>
+                            <Text style={pdfStyles.text}>Fecha: {new Date().toLocaleDateString()} </Text>
+                            <Text style={pdfStyles.title}>Kardex de Items</Text>
                         </View>
                     </View>
 
                 </View>
 
-                {/* Tabla de Órdenes */}
+
+                {/* Tabla de Items */}
                 <View style={pdfStyles.table}>
                     <View
                         style={{
                             padding: 10
                         }}
                     >
-                        <Text style={pdfStyles.title}>Reporte General de Clientes</Text>
-                        <Text style={pdfStyles.text}>Fecha: {formatDate(new Date())}</Text>
+                        <Text style={pdfStyles.text}>Almacén: {warehouse.name}</Text>
+                        <Text style={pdfStyles.text}>Dirección: {warehouse.address}</Text>
                     </View>
                     {/* Encabezados de la tabla */}
                     <View style={pdfStyles.headerTable}>
-                        <Text style={pdfStyles.cellHeader}>NIT/CI</Text>
-                        <Text style={pdfStyles.cellHeader}>Nombre</Text>
-                        <Text style={pdfStyles.cellHeader}>Cargo</Text>
-                        <Text style={pdfStyles.cellHeader}>Telefono 1</Text>
-                        <Text style={pdfStyles.cellHeader}>Telefono 2</Text>
-                        <Text style={pdfStyles.cellHeader}>Correo 1</Text>
-                        <Text style={pdfStyles.cellHeader}>Correo 2</Text>
+                        <Text style={pdfStyles.cellHeader}>Código</Text>
+                        <Text style={pdfStyles.cellHeader}>Descripción</Text>
+                        <Text style={pdfStyles.cellHeader}>Cantidad</Text>
+                        <Text style={pdfStyles.cellHeader}>Precio Unitario</Text>
                     </View>
-
+ 
                     {/* Filas de la tabla */}
-                    {clients.map((client) => (
-                        <View key={client.id} style={pdfStyles.row}>
-                            <Text style={pdfStyles.cell}>{client.nit}</Text>
-                            <Text style={pdfStyles.cell}>{client.name}</Text>
-                            <Text style={pdfStyles.cell}>{client.position}</Text>
-                            <Text style={pdfStyles.cell}>{client.phones[0] ?? 'No se asigno'}</Text>
-                            <Text style={pdfStyles.cell}>{client.phones[1] ?? 'No se asigno'}</Text>
-                            <Text style={pdfStyles.cell}>{client.emails[0] ?? 'No se asigno'}</Text>
-                            <Text style={pdfStyles.cell}>{client.emails[1]}</Text>
+                    {warehouse.products.map((item) => (
+                        <View key={item.id} style={pdfStyles.row}>
+                            <Text style={pdfStyles.cell}>{item.serialNumber}</Text>
+                            <Text style={pdfStyles.cell}>{item.name}</Text>
+                            <Text style={pdfStyles.cell}>{item.quantity}</Text>
+                            <Text style={pdfStyles.cell}>{item.priceSale}</Text>
                         </View>
                     ))}
                 </View>
+                {/* Total de Items */}
+
 
                 {/* Pie de página */}
                 <Text style={pdfStyles.footer}>

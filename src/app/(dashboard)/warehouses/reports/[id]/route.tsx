@@ -1,14 +1,17 @@
-// src/app/api/report/route.ts
 import { NextResponse } from 'next/server';
 import { renderToStream } from '@react-pdf/renderer';
-import { ClientsReportPdf } from '@/modules/clients/components/ClientsReportPdf';
-import { getAllClients } from '@/modules/clients/actions/get-all-clients';
 import fs from 'fs';
 import path from 'path';
+import { getWarehouseDetails } from '@/modules/warehouses/actions/get-warehouse-details';
+import { WarehouseDetailsReport } from '@/modules/warehouses/components/WarehouseDetailsReport';
 
-export async function GET() {
+export async function GET(request: Request,
+    { params }: { params: Promise<{ id: string }> }
+) {
+    const { id } = await params // 'a', 'b', or 'c'
+
     try {
-        const clientsData = await getAllClients({ page: 1, limit: 100 });
+        const { warehouse } = await getWarehouseDetails(id);
 
         // 1. Lee la imagen del disco
         const filePath = path.join(process.cwd(), 'public', 'images', 'ariol-logo.jpg');
@@ -16,9 +19,9 @@ export async function GET() {
         const logoBase64 = `data:image/jpeg;base64,${buffer.toString('base64')}`;
 
         const stream = await renderToStream(
-            <ClientsReportPdf 
+            <WarehouseDetailsReport
                 logo={logoBase64}
-                clients={clientsData.clients}
+                warehouse={warehouse}
             />
         );
 
@@ -27,7 +30,7 @@ export async function GET() {
         headers.set('Content-Type', 'application/pdf');
         // Access-Control-Allow-Origin.".
         headers.set('Access-Control-Allow-Origin', '*');
-        headers.set('Content-Disposition', 'inline; filename="reporte-ventas.pdf"');
+        headers.set('Content-Disposition', 'inline; filename="reporte-almacen.pdf"');
 
         return new NextResponse(stream as unknown as ReadableStream, { headers });
 

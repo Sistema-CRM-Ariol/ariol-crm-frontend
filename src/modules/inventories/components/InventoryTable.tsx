@@ -11,6 +11,9 @@ import { InventoryTableHeader } from "./InventoryTableHeader";
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/table";
 import { useRealTimeInventories } from "../hooks/useRealTimeInventories";
 import { InventoryItem } from "../interfaces/inventory-item.interface";
+import { UpdateInventoryModal } from "./UpdateInventoryModal";
+import { formatDate } from '../../../lib/helpers/index';
+import { Chip } from "@heroui/chip";
 
 interface Props {
     initialData: InventoryItem[];
@@ -19,7 +22,7 @@ interface Props {
 export const InventoryTable = ({ initialData }: Props) => {
 
     const { inventories } = useRealTimeInventories(initialData);
-    
+
     return (
         <section className="pt-8">
             <div className="container">
@@ -36,6 +39,9 @@ export const InventoryTable = ({ initialData }: Props) => {
                         <TableColumn>Nombre</TableColumn>
                         <TableColumn>Precio</TableColumn>
                         <TableColumn>Stock</TableColumn>
+                        <TableColumn>Estado</TableColumn>
+                        <TableColumn>Registrado</TableColumn>
+                        <TableColumn>F. Actualización</TableColumn>
                         <TableColumn>Acciones</TableColumn>
                     </TableHeader>
                     <TableBody
@@ -49,24 +55,44 @@ export const InventoryTable = ({ initialData }: Props) => {
                                 </TableCell>
                                 <TableCell width={100}>
                                     <Image
-                                        src={item.product.image ?? NotImage}
+                                        src={NotImage}
                                         alt={item.product.name}
                                         width={50}
                                         height={50}
+
                                     />
                                 </TableCell>
                                 <TableCell width={250}>
                                     {item.product.name}
                                 </TableCell>
                                 <TableCell>
-                                    { standardFormat(item.product.priceSale) } Bs
+                                    {standardFormat(item.product.priceSale)} Bs
                                 </TableCell>
                                 <TableCell>
                                     {item.quantity} u.
                                 </TableCell>
+
                                 <TableCell>
-                                    {/* Aquí puedes agregar botones para editar o eliminar */}
-                                    Editar | Eliminar
+                                    <Chip
+                                        size='sm'
+                                        radius='sm'
+                                        variant='bordered'
+                                        classNames={heroUIStyles.chip}
+                                        color={item.isActive ? "success" : "danger"}
+                                    >
+                                        {item.isActive ? "Activo" : "Desactivado"}
+                                    </Chip>
+                                </TableCell>
+                                <TableCell>
+                                    {formatDate(item.createdAt)}
+                                </TableCell>
+
+                                <TableCell>
+                                    {formatDate(item.updatedAt)}
+                                </TableCell>
+
+                                <TableCell>
+                                    <UpdateInventoryModal />
                                 </TableCell>
                             </TableRow>
                         ))}

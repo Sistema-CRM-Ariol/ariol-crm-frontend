@@ -3,6 +3,7 @@ export interface InventoryItem {
     quantity:    number;
     warehouseId: string;
     product:     InventoryProduct;
+    isActive:    boolean;
     createdAt:   Date;
     updatedAt:   Date;
 }

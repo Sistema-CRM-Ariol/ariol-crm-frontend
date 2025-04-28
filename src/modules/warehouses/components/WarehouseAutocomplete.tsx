@@ -19,7 +19,7 @@ export const WarehouseAutocomplete = ({ onSelect }: Props) => {
 
     return (
         <Autocomplete
-            label="Buscar Unidad"
+            label="Buscar Almacén"
             isRequired
             isLoading={isLoading}
             labelPlacement='outside'
@@ -27,7 +27,7 @@ export const WarehouseAutocomplete = ({ onSelect }: Props) => {
                 classNames: { ...heroUIStyles.input, innerWrapper: "pr-4" }
             }}
             classNames={heroUIStyles.autocomplete}
-            placeholder="Escribe el nombre de la unidad"
+            placeholder="Escribe el nombre del almacén"
             onInputChange={(value: string) => setInputValue(value)}
             onSelectionChange={(id) => {
                 setSelectedId(id as string); // Guarda el ID seleccionado
